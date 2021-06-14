@@ -27,7 +27,9 @@
     "sucrase": "^3.18.2"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "express": "^4.17.1",
+    "js": "^0.1.0",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.4",
