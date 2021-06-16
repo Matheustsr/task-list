@@ -1,4 +1,6 @@
 import express from 'express';
+import cors from 'cors';
+
 import routes from './routes';
 
 // importando a database
@@ -13,6 +15,7 @@ class App {
     }
 
     middlewares() {
+        this.server.unsubscribe(cors());
         this.server.use(express.json());
     }
 

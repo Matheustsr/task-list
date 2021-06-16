@@ -51,6 +51,11 @@ class TaskController {
             return res.status(400).json({ error: 'Essa tarefa não existe!' });
         }
 
+        if (task.user_id !== req.userId) {
+            // Check if user is owner of task
+            return res.status(401).json({ error: 'Não autorizado!' });
+        }
+
         await task.destroy(task);
 
         return res.status(204).send();
