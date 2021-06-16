@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import SessionController from './app/controllers/SessionController';
+import TaskController from './app/controllers/TaskController';
 import UserController from './app/controllers/UserController';
 
 import authMiddleware from './app/middlewares/auth';
@@ -12,5 +13,8 @@ routes.post('/sessions', SessionController.store);
 routes.use(authMiddleware); // daqui pra baixo vai precisar do middleware
 
 routes.put('/users', UserController.update);
+
+routes.post('/tasks', TaskController.store);
+routes.get('/tasks', TaskController.index);
 
 export default routes;
