@@ -28,6 +28,33 @@ class TaskController {
         });
         return res.json(tasks);
     }
+
+    async update(req, res) {
+        const { task_id } = req.params;
+
+        const task = await Task.findByPk(task_id);
+
+        if (!task) {
+            return res.status(400).json({ error: 'Essa tarefa não existe!' });
+        }
+
+        await task.update(req.body);
+
+        return res.json(task);
+    }
+
+    async destroy(req, res) {
+        const { task_id } = req.params;
+
+        const task = await Task.findByPk(task_id);
+        if (!task) {
+            return res.status(400).json({ error: 'Essa tarefa não existe!' });
+        }
+
+        await task.destroy(task);
+
+        return res.status(204).send();
+    }
 }
 
 export default new TaskController();
