@@ -15,7 +15,7 @@ class App {
     }
 
     middlewares() {
-        this.server.unsubscribe(cors());
+        this.server.use(cors());
         this.server.use(express.json());
     }
 
