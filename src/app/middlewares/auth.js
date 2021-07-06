@@ -7,6 +7,7 @@ export default async (req, res, next) => {
 
     if (!authHeader) {
         return res.status(401).json({ error: 'Não autorizado' });
+        return res.status(401).json({ error: 'Não autorizado' });
     }
 
     const [, token] = authHeader.split(' '); // removendo o prefixo bearer do token
