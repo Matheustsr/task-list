@@ -3,7 +3,6 @@ import databaseconfig from '../config/database';
 
 import User from '../app/models/User';
 import Task from '../app/models/task';
-import Task from '../app/models/task';
 
 const models = [User, Task];
 
